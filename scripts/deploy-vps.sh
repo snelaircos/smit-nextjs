@@ -9,7 +9,7 @@ set -euo pipefail
 # ── Configuratie ──────────────────────────────────────────────────────────────
 APP_DIR="/var/www/smit-site"
 APP_NAME="smit-site"
-BRANCH="main"
+BRANCH="master"
 
 # ── Kleuren voor output ───────────────────────────────────────────────────────
 GREEN="\033[0;32m"
