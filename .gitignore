@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# PM2 logs (worden op de VPS aangemaakt, niet in git)
+.pm2/
+logs/
+
+# Lokale environment overrides
+.env.local
+.env.production.local
