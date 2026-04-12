@@ -11,7 +11,7 @@ module.exports = {
       max_memory_restart: "512M",
       env: {
         NODE_ENV: "production",
-        PORT: 3000,
+        PORT: 3001,
       },
       error_file: "/var/log/pm2/smit-site-error.log",
       out_file: "/var/log/pm2/smit-site-out.log",
