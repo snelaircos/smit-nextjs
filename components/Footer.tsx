@@ -104,10 +104,10 @@ export default function Footer() {
                 <div>
                   <p className="text-gray-500 text-xs mb-0.5">E-mail ons</p>
                   <a
-                    href="mailto:k.smitinstallatietechniek@outlook.nl"
+                    href="mailto:k.smitinstallatietechniek@outlook.com"
                     className="hover:text-white transition-colors break-all"
                   >
-                    k.smitinstallatietechniek@outlook.nl
+                    k.smitinstallatietechniek@outlook.com
                   </a>
                 </div>
               </li>

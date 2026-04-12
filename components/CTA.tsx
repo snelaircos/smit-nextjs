@@ -37,7 +37,7 @@ export default function CTA() {
           </a>
 
           <a
-            href="mailto:k.smitinstallatietechniek@outlook.nl"
+            href="mailto:k.smitinstallatietechniek@outlook.com"
             className="inline-flex items-center gap-2 bg-white/10 text-white font-semibold px-6 py-3.5 rounded-lg hover:bg-white/20 transition-colors text-sm border border-white/30"
           >
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

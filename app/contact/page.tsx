@@ -58,8 +58,8 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <p className="text-sm text-gray-500 mb-0.5">E-mail</p>
-                        <a href="mailto:k.smitinstallatietechniek@outlook.nl" className="font-medium text-[#0f1f3d] hover:text-[#1d6fe8] transition-colors break-all">
-                          k.smitinstallatietechniek@outlook.nl
+                        <a href="mailto:k.smitinstallatietechniek@outlook.com" className="font-medium text-[#0f1f3d] hover:text-[#1d6fe8] transition-colors break-all">
+                          k.smitinstallatietechniek@outlook.com
                         </a>
                       </div>
                     </li>

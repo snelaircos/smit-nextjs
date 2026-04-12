@@ -7,7 +7,7 @@ export const localBusiness = {
   name: "SMIT Installatie Techniek",
   url: BASE_URL,
   telephone: "06-29528454",
-  email: "k.smitinstallatietechniek@outlook.nl",
+  email: "k.smitinstallatietechniek@outlook.com",
   image: `${BASE_URL}/logo.svg`,
   logo: `${BASE_URL}/logo.svg`,
   description:

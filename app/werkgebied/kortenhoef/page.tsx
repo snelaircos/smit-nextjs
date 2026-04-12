@@ -147,11 +147,11 @@ export default function KortenhoefPage() {
                       </a>
                     </li>
                     <li>
-                      <a href="mailto:k.smitinstallatietechniek@outlook.nl" className="flex items-start gap-2 text-gray-600 hover:text-[#1d6fe8] transition-colors break-all">
+                      <a href="mailto:k.smitinstallatietechniek@outlook.com" className="flex items-start gap-2 text-gray-600 hover:text-[#1d6fe8] transition-colors break-all">
                         <svg className="w-4 h-4 text-[#1d6fe8] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
-                        k.smitinstallatietechniek@outlook.nl
+                        k.smitinstallatietechniek@outlook.com
                       </a>
                     </li>
                     <li className="flex items-start gap-2 text-gray-600">
