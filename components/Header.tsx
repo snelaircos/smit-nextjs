@@ -45,7 +45,7 @@ export default function Header() {
         <div className="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 shrink-0">
-            <Image src="/logo.svg" alt="SMIT Installatie Techniek" width={120} height={44} priority />
+            <Image src="/logo-nieuw.png" alt="SMIT Installatie Techniek" width={170} height={50} priority />
           </Link>
 
           {/* Desktop nav */}
