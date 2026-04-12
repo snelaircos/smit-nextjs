@@ -144,8 +144,8 @@ export default function Footer() {
             <Link href="/algemene-voorwaarden" className="hover:text-white transition-colors">
               Algemene Voorwaarden
             </Link>
-            <Link href="/privacy-policy" className="hover:text-white transition-colors">
-              Privacy Policy
+            <Link href="/privacy" className="hover:text-white transition-colors">
+              Privacyverklaring
             </Link>
           </div>
         </div>
