@@ -39,11 +39,13 @@ log "Git pull geslaagd."
 
 # ── Stap 2: Dependencies installeren ─────────────────────────────────────────
 log "Stap 2/4 — Dependencies installeren..."
+rm -rf node_modules
 npm ci
 log "npm install geslaagd."
 
 # ── Stap 3: Build ─────────────────────────────────────────────────────────────
 log "Stap 3/4 — Next.js build starten..."
+rm -rf .next
 npm run build
 log "Build geslaagd."
 
