@@ -535,6 +535,106 @@ export const services: Service[] = [
     ],
     icon: "⚡",
   },
+
+  {
+    slug: "installatietechniek",
+    name: "Installatietechniek",
+    namePlural: "Installatiewerkzaamheden",
+    vakman: "installateur",
+    tagline: "Allround installateur voor woning en bedrijfspand",
+    metaTitle: "Installateur Kortenhoef & omgeving | SMIT Installatie Techniek",
+    metaDescription:
+      "Allround installateur in Kortenhoef, Hilversum en Het Gooi. Installatietechniek voor woning en bedrijfspand — van klein onderhoud tot complete renovatie. Bel 06-29528454.",
+    h1: "Installateur in Kortenhoef en omgeving",
+    intro:
+      "Naast onze gespecialiseerde vakgebieden helpen we u ook met uiteenlopende installatieklussen in en om de woning. Kevin Smit is uw allround installateur in Kortenhoef en de regio — snel, vakkundig en altijd eerlijk.",
+    introExtended:
+      "Niet elk probleem in huis valt netjes onder één vakgebied. Een combinatie van leidingwerk, een aanpassing aan de afvoer én een nieuwe aansluiting? SMIT Installatie Techniek pakt het als allround installateur in één keer aan. Geen gedoe met meerdere vakmensen, geen wachttijden en geen communicatieproblemen. Kevin Smit overziet het geheel, adviseert u eerlijk en voert het werk uit met oog voor kwaliteit en een nette afwerking. We werken voor particulieren, VvE's en kleine bedrijfspanden in Kortenhoef, Hilversum, Huizen, Naarden en de bredere regio.",
+    whenNeeded: {
+      title: "Wanneer schakelt u een allround installateur in?",
+      items: [
+        "U heeft een combinatie van installatieklussen die u in één keer wilt laten aanpakken",
+        "U verbouwt en heeft een vakman nodig voor de technische installaties",
+        "U wilt leidingwerk, afvoer of aansluitingen laten vernieuwen",
+        "Er is een technisch probleem dat niet onder één vakgebied valt",
+        "U wilt advies over de beste installatietechnische aanpak voor uw situatie",
+        "U zoekt een betrouwbare installateur voor onderhoud aan uw woning",
+        "Uw huurder of VvE heeft een installatieprobleem dat snel opgelost moet worden",
+      ],
+    },
+    sections: [
+      {
+        h2: "Allround installateur: één vakman voor al uw klussen",
+        body: "Bij SMIT Installatie Techniek hoeft u niet voor elke klus een andere vakman te bellen. Of het nu gaat om een aanpassing aan het leidingwerk, een nieuwe aansluiting, een reparatie aan de afvoer of een combinatie van werkzaamheden — Kevin Smit pakt het in één keer aan. Dat scheelt u tijd, geld en frustratie.",
+      },
+      {
+        h2: "Verbouwing en renovatie: het technische deel geregeld",
+        body: "Bij een verbouwing komt veel installatiewerk kijken. Leidingwerk verleggen, nieuwe aansluitpunten creëren, afvoeren aanpassen — SMIT Installatie Techniek verzorgt het complete installatietechnische deel van uw verbouwing. We stemmen de planning af met uw aannemer en zorgen dat alles in één keer goed zit.",
+      },
+      {
+        h2: "Onderhoud en kleine reparaties",
+        body: "Een druppelende kraan, een radiator die niet warm wordt, een afvoer die traag wegloopt — kleine problemen die u liever vandaag dan morgen opgelost heeft. Wij reageren snel op onderhoudsmeldingen en lossen het probleem vakkundig op. Geen overkill, gewoon een degelijke reparatie.",
+      },
+      {
+        h2: "Advies op maat voor uw installaties",
+        body: "Twijfelt u over de beste aanpak? Kevin Smit komt vrijblijvend langs, bekijkt de situatie en adviseert u eerlijk. Geen verkooppraatjes, maar een realistische inschatting van wat nodig is, wat het kost en hoe lang het duurt.",
+      },
+    ],
+    werkwijze: [
+      { stap: "1. Contact opnemen", body: "Bel, WhatsApp of mail ons. We bespreken kort de situatie zodat we weten wat we kunnen verwachten." },
+      { stap: "2. Inspectie op locatie", body: "Kevin bekijkt de situatie ter plaatse en adviseert over de beste aanpak." },
+      { stap: "3. Duidelijke offerte", body: "U ontvangt een heldere offerte zonder verborgen kosten. U beslist." },
+      { stap: "4. Uitvoering", body: "We voeren het werk vakkundig uit, ruimen netjes op en testen alles grondig." },
+      { stap: "5. Oplevering en nazorg", body: "We lichten het werk toe en zijn bereikbaar voor eventuele vragen achteraf." },
+    ],
+    werkzaamheden: [
+      "Leidingwerk aanleggen, verleggen en vernieuwen",
+      "Aansluitingen realiseren voor sanitair en apparatuur",
+      "Afvoerleidingen aanleggen en repareren",
+      "Installatiewerk bij verbouwing en renovatie",
+      "Radiatoren en convectoren plaatsen en vervangen",
+      "Technisch onderhoud aan installaties in de woning",
+      "Combinatieklussen: meerdere vakgebieden in één bezoek",
+      "Klein onderhoud en reparaties",
+    ],
+    situaties: [
+      "Woningeigenaren met een combinatie van installatieklussen",
+      "Verbouwers die het installatietechnische deel willen uitbesteden",
+      "Mensen met een technisch probleem dat snel opgelost moet worden",
+      "VvE's en verhuurders met onderhoudsmeldingen",
+      "Bedrijfspanden met klein of groot installatieonderhoud",
+    ],
+    trustReasons: [
+      "Allround installateur met brede kennis en ervaring",
+      "Eén aanspreekpunt voor al uw installatiewerk",
+      "Snel ter plaatse in Kortenhoef en de regio",
+      "Eerlijk advies — geen onnodige werkzaamheden",
+      "Netjes werken en alles opgeruimd achterlaten",
+    ],
+    faq: [
+      {
+        q: "Wat valt er allemaal onder installatietechniek?",
+        a: "Installatietechniek omvat al het technische werk in en om de woning: leidingwerk, aansluitingen, afvoeren, verwarmingsinstallaties en meer. Bij SMIT Installatie Techniek combineren we dit met dakwerk en zinkwerk — zo regelen we alles in één keer.",
+      },
+      {
+        q: "Kan ik meerdere klussen tegelijk laten uitvoeren?",
+        a: "Zeker. Dat is juist een van onze sterke punten. Als u meerdere zaken wilt laten aanpakken, plannen we dat efficiënt in zodat u maar één keer overlast heeft.",
+      },
+      {
+        q: "Werken jullie ook bij verbouwingen?",
+        a: "Ja. We verzorgen het installatietechnische deel van verbouwingen: leidingwerk, aansluitingen, afvoeren en verwarmingsinstallaties. We stemmen de planning af met uw aannemer.",
+      },
+      {
+        q: "Hoe snel kunnen jullie langskomen?",
+        a: "Voor spoedklussen proberen we dezelfde dag te komen. Voor gepland werk maken we een afspraak die u past — meestal binnen een week.",
+      },
+      {
+        q: "Geven jullie ook advies als ik nog niet zeker weet wat ik wil?",
+        a: "Absoluut. Kevin komt vrijblijvend langs, bekijkt de situatie en geeft u een eerlijk advies. Geen verplichting.",
+      },
+    ],
+    icon: "⚙️",
+  },
 ];
 
 export function getService(slug: string): Service | undefined {

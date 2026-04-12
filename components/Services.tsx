@@ -58,7 +58,7 @@ const services = [
     ),
   },
   {
-    slug: "dakwerk",
+    slug: "installatietechniek",
     title: "Installatietechniek",
     description:
       "Naast de vaste vakgebieden helpen we ook met uiteenlopende installatieklussen in en om de woning. Neem contact op voor uw specifieke situatie.",
