@@ -50,7 +50,7 @@ npm run build
 log "Build geslaagd."
 
 # ── Stap 4: PM2 starten of herstarten ────────────────────────────────────────
-log "Stap 4/4 — PM2 herstarten..."
+log "Stap 4/5 — PM2 herstarten..."
 
 if pm2 describe "$APP_NAME" > /dev/null 2>&1; then
   pm2 reload "$APP_NAME" --update-env
@@ -61,7 +61,12 @@ else
   log "PM2 app '$APP_NAME' voor het eerst gestart en opgeslagen."
 fi
 
+# ── Stap 5: IndexNow notificeren ─────────────────────────────────────────────
+log "Stap 5/5 — IndexNow notificeren (Bing/Yandex)..."
+sleep 3  # wacht even tot PM2 up is
+bash scripts/indexnow.sh || warn "IndexNow faalde (niet kritisch)."
+
 # ── Klaar ─────────────────────────────────────────────────────────────────────
 echo "────────────────────────────────────────────────"
-log "Deploy voltooid. Site draait op poort 3000."
+log "Deploy voltooid. Site draait op poort 3001."
 echo -e "${GREEN}→ https://www.smit-installatie-techniek.nl${RESET}"
