@@ -48,8 +48,7 @@ export const localBusiness = {
     },
   ],
   sameAs: [
-    "https://www.facebook.com/smitinstallatietechniek",
-    "https://www.instagram.com/smitinstallatietechniek",
+    "https://www.instagram.com/smitinstallatietechniek/",
   ],
 };
 

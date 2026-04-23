@@ -32,18 +32,7 @@ export default function Footer() {
             {/* Social */}
             <div className="flex gap-3">
               <a
-                href="https://www.facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-                className="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center hover:bg-[#1d6fe8] transition-colors"
-              >
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
-                </svg>
-              </a>
-              <a
-                href="https://www.instagram.com"
+                href="https://www.instagram.com/smitinstallatietechniek/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
