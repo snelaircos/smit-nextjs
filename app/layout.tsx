@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.smit-installatie-techniek.nl"),
   title: "SMIT Installatie Techniek | Dakwerk, Zinkwerk, Sanitair & Installatie",
   description:
-    "Uw gecertificeerde installateur in Kortenhoef. Betrouwbaar, snel en professioneel — altijd netjes achtergelaten. Dakwerk, zinkwerk, sanitair, water, CV-installatie en gas.",
+    "Gecertificeerd installateur in Kortenhoef voor dakwerk, zinkwerk, sanitair, CV en gas. Betrouwbaar, snel en vakkundig. Bel 06-29528454.",
   keywords: "installateur, dakwerk, zinkwerk, sanitair, CV-installatie, gas, Kortenhoef, Hilversum, Loosdrecht",
   verification: {
     google: "z-dNvaC4bgMJbIrFHdioMbhvjkWl7xEjumcJ0KLBLhg",

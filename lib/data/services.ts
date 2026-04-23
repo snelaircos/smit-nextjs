@@ -31,7 +31,7 @@ export const services: Service[] = [
     tagline: "Vakkundige dakdekker in Het Gooi en omgeving",
     metaTitle: "Dakdekker Kortenhoef & omgeving | SMIT Installatie Techniek",
     metaDescription:
-      "Professioneel dakwerk in Kortenhoef, Hilversum en Het Gooi. Dakreparatie, nieuwe dakbedekking, lichtkoepels en onderhoud door gecertificeerde dakdekker. Bel 06-29528454.",
+      "Dakwerk in Kortenhoef, Hilversum en Het Gooi. Dakreparatie, nieuwe dakbedekking en onderhoud door gecertificeerde dakdekker. Bel 06-29528454.",
     h1: "Dakdekker in Kortenhoef en omgeving",
     intro:
       "Een lekkage pakt je nooit op een gunstig moment. Kevin Smit weet dat. Als dakdekker actief in Kortenhoef en de regio reageert hij snel, werkt hij vakkundig en laat hij uw dak achter zoals het hoort: dicht, duurzaam en netjes afgewerkt.",
@@ -544,7 +544,7 @@ export const services: Service[] = [
     tagline: "Allround installateur voor woning en bedrijfspand",
     metaTitle: "Installateur Kortenhoef & omgeving | SMIT Installatie Techniek",
     metaDescription:
-      "Allround installateur in Kortenhoef, Hilversum en Het Gooi. Installatietechniek voor woning en bedrijfspand — van klein onderhoud tot complete renovatie. Bel 06-29528454.",
+      "Allround installateur in Kortenhoef en Het Gooi. Installatietechniek voor woning en bedrijfspand — van onderhoud tot renovatie. Bel 06-29528454.",
     h1: "Installateur in Kortenhoef en omgeving",
     intro:
       "Naast onze gespecialiseerde vakgebieden helpen we u ook met uiteenlopende installatieklussen in en om de woning. Kevin Smit is uw allround installateur in Kortenhoef en de regio — snel, vakkundig en altijd eerlijk.",

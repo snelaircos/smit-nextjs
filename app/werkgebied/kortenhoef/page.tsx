@@ -11,7 +11,7 @@ import { localBusiness, breadcrumbSchema, faqSchema } from "@/lib/structured-dat
 export const metadata: Metadata = {
   title: "Installateur Kortenhoef | SMIT Installatie Techniek – Uw lokale vakman",
   description:
-    "SMIT Installatie Techniek is gevestigd in Kortenhoef. Uw lokale installateur voor dakwerk, zinkwerk, sanitair, CV en gasinstallatie. Kevin Smit — snel, betrouwbaar en eerlijk.",
+    "SMIT Installatie Techniek in Kortenhoef. Uw lokale installateur voor dakwerk, zinkwerk, sanitair, CV en gas. Snel, betrouwbaar en eerlijk.",
   alternates: { canonical: "https://www.smit-installatie-techniek.nl/werkgebied/kortenhoef" },
   openGraph: {
     title: "Installateur Kortenhoef | SMIT Installatie Techniek",

@@ -26,7 +26,7 @@ const content: Record<string, ComboContent> = {
   "dakwerk/kortenhoef": {
     metaTitle: "Dakdekker Kortenhoef | SMIT Installatie Techniek – Uw lokale specialist",
     metaDescription:
-      "Op zoek naar een dakdekker in Kortenhoef? Kevin Smit woont en werkt hier zelf. Dakreparatie, nieuwe dakbedekking en onderhoud — snel ter plaatse, eerlijke prijs.",
+      "Dakdekker in Kortenhoef? Kevin Smit woont en werkt hier zelf. Dakreparatie, nieuwe dakbedekking en onderhoud — snel ter plaatse, eerlijke prijs.",
     h1: "Dakdekker in Kortenhoef",
     lead: "Kevin Smit is niet zomaar een dakdekker in Kortenhoef — hij woont hier zelf. Als uw dak lekt, staat hij snel aan uw deur.",
     intro:
@@ -97,7 +97,7 @@ const content: Record<string, ComboContent> = {
   "dakwerk/hilversum": {
     metaTitle: "Dakdekker Hilversum | SMIT Installatie Techniek – Vakkundige dakspecialist",
     metaDescription:
-      "Dakdekker nodig in Hilversum? SMIT Installatie Techniek voert dakreparaties, dakbedekking en onderhoud uit in heel Hilversum. Van villa's tot appartementen. Bel 06-29528454.",
+      "Dakdekker in Hilversum? SMIT voert dakreparaties, dakbedekking en onderhoud uit in heel Hilversum. Villa's, appartementen en meer. Bel 06-29528454.",
     h1: "Dakdekker in Hilversum",
     lead: "Hilversum heeft een van de rijkste woningbestanden in Nederland — van Art Deco-villa's uit de jaren '20 tot moderne stadsappartementen. Elk daktype vraagt zijn eigen aanpak.",
     intro:
@@ -240,7 +240,7 @@ const content: Record<string, ComboContent> = {
   "dakwerk/naarden": {
     metaTitle: "Dakdekker Naarden | SMIT Installatie Techniek – Zorgvuldig vakwerk",
     metaDescription:
-      "Dakdekker in Naarden? SMIT Installatie Techniek voert dakwerk uit in Naarden-Vesting en omgeving. Ervaring met historische panden, karakterwoningen en moderne dakbedekking.",
+      "Dakdekker in Naarden? SMIT voert dakwerk uit in Naarden-Vesting en omgeving. Ervaring met historische panden, karakterwoningen en moderne daken.",
     h1: "Dakdekker in Naarden",
     lead: "Naarden is een van de best bewaarde vestingsteden van Europa. De woningen en panden verdienen vakmannen die dat respecteren.",
     intro:
@@ -311,7 +311,7 @@ const content: Record<string, ComboContent> = {
   "sanitair/kortenhoef": {
     metaTitle: "Loodgieter Kortenhoef | SMIT Installatie Techniek – Snel en betrouwbaar",
     metaDescription:
-      "Loodgieter nodig in Kortenhoef? Kevin Smit is uw lokale loodgieter. Lekkage, badkamer, leidingwerk en sanitair. Snel ter plaatse, eerlijke prijs. Bel 06-29528454.",
+      "Loodgieter in Kortenhoef? Kevin Smit is uw lokale loodgieter. Lekkage, badkamer en sanitair. Snel ter plaatse, eerlijke prijs. Bel 06-29528454.",
     h1: "Loodgieter in Kortenhoef",
     lead: "Van een verstopte afvoer tot een complete badkamerrenovatie — Kevin Smit is de loodgieter in Kortenhoef die u direct te pakken krijgt.",
     intro:
@@ -375,7 +375,7 @@ const content: Record<string, ComboContent> = {
   "sanitair/hilversum": {
     metaTitle: "Loodgieter Hilversum | SMIT Installatie Techniek – Sanitair specialist",
     metaDescription:
-      "Loodgieter in Hilversum nodig? SMIT Installatie Techniek voor lekkage, badkamerrenovatie en leidingwerk in heel Hilversum. Snel en gecertificeerd. Bel 06-29528454.",
+      "Loodgieter in Hilversum? SMIT voor lekkage, badkamerrenovatie en leidingwerk in heel Hilversum. Snel en gecertificeerd. Bel 06-29528454.",
     h1: "Loodgieter in Hilversum",
     lead: "Hilversum heeft uiteenlopende woningtypes — van 100 jaar oude villa's tot moderne stadsappartementen. Onze loodgieters kennen elk type installatie.",
     intro:
@@ -572,7 +572,7 @@ const content: Record<string, ComboContent> = {
   "zinkwerk/kortenhoef": {
     metaTitle: "Zinkwerk Kortenhoef | SMIT Installatie Techniek – Lokale zinkspecialist",
     metaDescription:
-      "Zinkwerk in Kortenhoef? SMIT Installatie Techniek verzorgt dakgoten, kilgoten, zinken dakranden en hemelwaterafvoer. Kevin woont in Kortenhoef — snel ter plaatse. Bel 06-29528454.",
+      "Zinkwerk in Kortenhoef? SMIT verzorgt dakgoten, kilgoten, zinken dakranden en hemelwaterafvoer. Kevin woont hier — snel ter plaatse. Bel 06-29528454.",
     h1: "Zinkwerk in Kortenhoef",
     lead: "Goed zinkwerk is onzichtbaar als het klopt — en duidelijk zichtbaar als het niet klopt. Kevin Smit is de zinkspecialist in Kortenhoef die het in één keer goed doet.",
     intro:
@@ -643,7 +643,7 @@ const content: Record<string, ComboContent> = {
   "gasinstallatie/kortenhoef": {
     metaTitle: "Gasinstallateur Kortenhoef | SMIT Installatie Techniek – Gecertificeerd en lokaal",
     metaDescription:
-      "Gasinstallateur in Kortenhoef? Kevin Smit is gecertificeerd gasinstallateur en woont in het dorp. Gasleidingen aanleggen, gastoestellen aansluiten en veiligheidscontroles. Bel 06-29528454.",
+      "Gasinstallateur in Kortenhoef? Kevin Smit is gecertificeerd en woont hier. Gasleidingen, gastoestellen aansluiten en veiligheidscontroles. Bel 06-29528454.",
     h1: "Gasinstallatie in Kortenhoef",
     lead: "Gas is geen klusje om zelf te doen of aan de goedkoopste aanbieder over te laten. Kevin Smit is gecertificeerd gasinstallateur — en hij woont gewoon in Kortenhoef.",
     intro:
