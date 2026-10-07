@@ -6,6 +6,7 @@ module.exports = {
       args: "start",
       cwd: "/var/www/smit-site",
       instances: 1,
+      exec_mode: "fork",
       autorestart: true,
       watch: false,
       max_memory_restart: "512M",
@@ -13,8 +14,7 @@ module.exports = {
         NODE_ENV: "production",
         PORT: 3001,
       },
-      error_file: "/var/log/pm2/smit-site-error.log",
-      out_file: "/var/log/pm2/smit-site-out.log",
+      // Logs: PM2-standaard → /home/smitsite/.pm2/logs/smit-site-{out,error}-0.log
       log_date_format: "YYYY-MM-DD HH:mm:ss",
     },
   ],

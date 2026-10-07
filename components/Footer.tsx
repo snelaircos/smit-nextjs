@@ -129,10 +129,13 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-gray-500">
           <p>© {new Date().getFullYear()} SMIT Installatie Techniek. Alle rechten voorbehouden.</p>
-          <div className="flex gap-5">
+          <div className="flex flex-wrap gap-5">
             <Link href="/algemene-voorwaarden" className="hover:text-white transition-colors">
               Algemene Voorwaarden
             </Link>
+            <a href="https://snelliowebdesign.nl" className="hover:text-white transition-colors">
+              Website door Snellio Webdesign
+            </a>
             <Link href="/privacy" className="hover:text-white transition-colors">
               Privacyverklaring
             </Link>

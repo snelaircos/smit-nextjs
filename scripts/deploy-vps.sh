@@ -9,7 +9,18 @@ set -euo pipefail
 # ── Configuratie ──────────────────────────────────────────────────────────────
 APP_DIR="/var/www/smit-site"
 APP_NAME="smit-site"
+APP_USER="smitsite"   # eigenaar van de map én van het PM2-proces
 BRANCH="master"
+
+# ── Altijd draaien als $APP_USER ─────────────────────────────────────────────
+# Als root: opnieuw starten als $APP_USER. Als iemand anders: stoppen.
+if [ "$(id -un)" != "$APP_USER" ]; then
+  if [ "$(id -u)" -eq 0 ]; then
+    exec sudo -u "$APP_USER" -H bash -lc "cd '$APP_DIR' && bash scripts/deploy-vps.sh"
+  fi
+  echo "Dit script moet als root of als $APP_USER draaien (nu: $(id -un))." >&2
+  exit 1
+fi
 
 # ── Kleuren voor output ───────────────────────────────────────────────────────
 GREEN="\033[0;32m"

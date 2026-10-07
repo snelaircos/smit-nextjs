@@ -20,5 +20,8 @@ jobs:
           key: ${{ secrets.DEPLOY_KEY }}
           port: ${{ secrets.DEPLOY_PORT || 22 }}
           script: |
-            cd /var/www/smit-site
-            bash scripts/deploy-vps.sh
+            set -e
+            # De site draait onder gebruiker smitsite (eigen PM2). Als root deployen
+            # faalt op "dubious ownership" in git, dus: rechten goedzetten en als smitsite draaien.
+            chown -R smitsite:smitsite /var/www/smit-site
+            sudo -u smitsite -H bash -lc 'cd /var/www/smit-site && bash scripts/deploy-vps.sh'

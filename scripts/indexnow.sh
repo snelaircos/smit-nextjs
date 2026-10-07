@@ -46,7 +46,8 @@ EOF
 
 # ── Stuur naar Bing (centrale endpoint deelt met andere zoekmachines) ────
 log "Stuur naar api.indexnow.org..."
-HTTP_CODE=$(curl -s -o /tmp/indexnow-response.txt -w "%{http_code}" \
+RESPONSE_FILE=$(mktemp)
+HTTP_CODE=$(curl -s -o "$RESPONSE_FILE" -w "%{http_code}" \
   -X POST "https://api.indexnow.org/IndexNow" \
   -H "Content-Type: application/json; charset=utf-8" \
   -d "$PAYLOAD")
@@ -54,6 +55,7 @@ HTTP_CODE=$(curl -s -o /tmp/indexnow-response.txt -w "%{http_code}" \
 if [ "$HTTP_CODE" = "200" ] || [ "$HTTP_CODE" = "202" ]; then
   log "IndexNow succesvol: HTTP $HTTP_CODE ($URL_COUNT URL's aangemeld)."
 else
-  warn "IndexNow gaf HTTP $HTTP_CODE — zie /tmp/indexnow-response.txt"
-  cat /tmp/indexnow-response.txt || true
+  warn "IndexNow gaf HTTP $HTTP_CODE:"
+  cat "$RESPONSE_FILE" || true
 fi
+rm -f "$RESPONSE_FILE"
