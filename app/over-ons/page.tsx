@@ -128,7 +128,7 @@ export default function OverOnsPage() {
                   <div><dt className="text-gray-500 text-xs">Vestigingsplaats</dt><dd className="font-medium">Kortenhoef, gemeente Wijdemeren (Noord-Holland)</dd></div>
                   <div><dt className="text-gray-500 text-xs">Telefoon / WhatsApp</dt><dd><a href="tel:0629528454" className="font-medium hover:text-[#1d6fe8]">06 - 29528454</a></dd></div>
                   <div><dt className="text-gray-500 text-xs">E-mail</dt><dd><a href="mailto:k.smitinstallatietechniek@outlook.com" className="font-medium hover:text-[#1d6fe8] break-all">k.smitinstallatietechniek@outlook.com</a></dd></div>
-                  <div><dt className="text-gray-500 text-xs">Bereikbaar</dt><dd className="font-medium">Werkdagen 07:30 – 17:30</dd></div>
+                  <div><dt className="text-gray-500 text-xs">Bereikbaar</dt><dd className="font-medium">Maandag t/m zaterdag 07:00 – 17:00</dd></div>
                 </dl>
                 <div className="mt-5 flex flex-col gap-2 text-sm">
                   <a href={GOOGLE_MAPS_URL} target="_blank" rel="noopener noreferrer" className="text-[#1d6fe8] font-semibold hover:underline">Bekijk op Google Maps →</a>

@@ -82,7 +82,7 @@ export default function ContactPage() {
                 <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
                   <h3 className="font-bold text-[#0f1f3d] mb-2">Bereikbaarheid</h3>
                   <p className="text-sm text-gray-600 leading-relaxed">
-                    Maandag t/m vrijdag: 07:30 – 17:30<br />
+                    Maandag t/m zaterdag: 07:00 – 17:00<br />
                     Voor spoedgevallen zijn we ook buiten kantooruren bereikbaar via telefoon of WhatsApp.
                   </p>
                 </div>

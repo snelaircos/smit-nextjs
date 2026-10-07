@@ -51,9 +51,9 @@ export const localBusiness = {
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      opens: "07:30",
-      closes: "17:30",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      opens: "07:00",
+      closes: "17:00",
     },
   ],
   sameAs: [INSTAGRAM_URL, GOOGLE_MAPS_URL],
