@@ -1,13 +1,22 @@
 import Image from "next/image";
 import Link from "next/link";
+import { GOOGLE_MAPS_URL, GOOGLE_REVIEW_URL } from "@/lib/structured-data";
 
 const services = [
-  "Dakwerk",
-  "Zinkwerk",
-  "Sanitair",
-  "Water",
-  "CV-installatie",
-  "Gas",
+  { label: "Dakwerk & dakdekker", href: "/dakwerk" },
+  { label: "Zinkwerk & dakgoten", href: "/zinkwerk" },
+  { label: "Loodgieter & sanitair", href: "/sanitair" },
+  { label: "CV-installatie", href: "/cv-installatie" },
+  { label: "Gasinstallatie", href: "/gasinstallatie" },
+  { label: "Installatietechniek", href: "/installatietechniek" },
+];
+
+const populair = [
+  { label: "Loodgieter Hilversum", href: "/sanitair/hilversum" },
+  { label: "Dakdekker Hilversum", href: "/dakwerk/hilversum" },
+  { label: "Loodgieter Huizen", href: "/sanitair/huizen" },
+  { label: "Loodgieter Bussum", href: "/sanitair/bussum" },
+  { label: "Loodgieter Kortenhoef", href: "/sanitair/kortenhoef" },
 ];
 
 export default function Footer() {
@@ -25,8 +34,8 @@ export default function Footer() {
               className="mb-4 brightness-200 invert"
             />
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
-              Uw betrouwbare partner voor dakwerk, zinkwerk, sanitair, en
-              installatietechniek in Kortenhoef en omstreken. Vakmanschap waar u
+              Loodgieter, dakdekker en cv-monteur in &apos;t Gooi. Kevin Smit uit
+              Kortenhoef voor dakwerk, zinkwerk, sanitair, CV en gas. Vakmanschap waar u
               op kunt bouwen.
             </p>
             {/* Social */}
@@ -54,16 +63,16 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3">
               {services.map((s) => (
-                <li key={s}>
-                  <a
-                    href="#diensten"
+                <li key={s.href}>
+                  <Link
+                    href={s.href}
                     className="text-gray-300 text-sm hover:text-white transition-colors flex items-center gap-2"
                   >
                     <svg className="w-3 h-3 text-[#1d6fe8]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                     </svg>
-                    {s}
-                  </a>
+                    {s.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -100,6 +109,21 @@ export default function Footer() {
                   </a>
                 </div>
               </li>
+              <li className="flex items-start gap-3">
+                <svg className="w-4 h-4 text-[#1d6fe8] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+                </svg>
+                <div>
+                  <p className="text-gray-500 text-xs mb-0.5">Tevreden klant?</p>
+                  <a href={GOOGLE_REVIEW_URL} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                    Schrijf een Google-review
+                  </a>
+                  <span className="text-gray-600"> · </span>
+                  <a href={GOOGLE_MAPS_URL} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                    Bekijk op Google Maps
+                  </a>
+                </div>
+              </li>
             </ul>
           </div>
 
@@ -121,6 +145,20 @@ export default function Footer() {
                 </p>
               </div>
             </div>
+            <ul className="space-y-2 mt-4">
+              {populair.map((p) => (
+                <li key={p.href}>
+                  <Link href={p.href} className="text-gray-300 text-sm hover:text-white transition-colors">
+                    {p.label}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link href="/werkgebied" className="text-[#1d6fe8] text-sm font-semibold hover:underline">
+                  Alle werkgebieden →
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -130,6 +168,9 @@ export default function Footer() {
         <div className="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-gray-500">
           <p>© {new Date().getFullYear()} SMIT Installatie Techniek. Alle rechten voorbehouden.</p>
           <div className="flex flex-wrap gap-5">
+            <Link href="/over-ons" className="hover:text-white transition-colors">
+              Over Kevin Smit
+            </Link>
             <Link href="/algemene-voorwaarden" className="hover:text-white transition-colors">
               Algemene Voorwaarden
             </Link>

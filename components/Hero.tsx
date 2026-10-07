@@ -15,17 +15,18 @@ export default function Hero() {
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-              Vakwerk in dak,
+              Loodgieter, dakdekker{" "}
               <br />
-              zink, sanitair
+              en cv-monteur{" "}
               <br />
-              en{" "}
-              <span className="text-[#1d6fe8]">installatie</span>
+              in{" "}
+              <span className="text-[#1d6fe8]">&apos;t Gooi</span>
             </h1>
 
             <p className="text-gray-300 text-lg mb-8 leading-relaxed max-w-lg">
-              Uw gecertificeerde installateur in Kortenhoef. Betrouwbaar, snel
-              en professioneel — altijd netjes achtergelaten.
+              SMIT Installatie Techniek uit Kortenhoef. Dakwerk, zinkwerk, sanitair,
+              CV en gas voor woningen in Hilversum, Wijdemeren en de hele regio.
+              Kevin Smit komt zelf langs en laat het netjes achter.
             </p>
 
             {/* Trust badges */}
@@ -63,7 +64,7 @@ export default function Hero() {
             </div>
 
             <p className="mt-6 text-xs text-gray-400">
-              Snel ter plaatse in Kortenhoef en omgeving
+              Snel ter plaatse in Kortenhoef, Hilversum, Loosdrecht, Bussum, Huizen en heel &apos;t Gooi
             </p>
           </div>
 

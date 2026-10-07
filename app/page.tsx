@@ -7,14 +7,38 @@ import Portfolio from "@/components/Portfolio";
 import Testimonials from "@/components/Testimonials";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
-import { localBusiness } from "@/lib/structured-data";
+import FAQ from "@/components/FAQ";
+import { localBusiness, faqSchema } from "@/lib/structured-data";
 import { locations } from "@/lib/data/locations";
-import { services } from "@/lib/data/services";
+
+const homeFaq = [
+  {
+    q: "In welke plaatsen werkt SMIT Installatie Techniek?",
+    a: "Kevin Smit werkt vanuit Kortenhoef in heel 't Gooi en omgeving: Hilversum, Loosdrecht, 's-Graveland, Ankeveen, Nederhorst den Berg, Bussum, Naarden, Huizen, Laren, Blaricum, Baarn, Eemnes, Weesp, Muiden en de Vechtstreek tot Breukelen en Maarssen.",
+  },
+  {
+    q: "Welke werkzaamheden doet SMIT als loodgieter?",
+    a: "Lekkages opsporen en verhelpen, verstoppingen, leidingwerk vervangen, kranen en warm water, en complete badkamer-, toilet- en keukeninstallaties. Ook de cv-ketel, vloerverwarming en gasleidingen kunnen in één hand bij dezelfde vakman.",
+  },
+  {
+    q: "Doet SMIT ook dakwerk en zinkwerk?",
+    a: "Ja. Kevin repareert en vervangt platte daken en pannendaken, spoort daklekkages op, plaatst lichtkoepels en verzorgt dakgoten, zinken daklijsten en hemelwaterafvoer. Dak, zink en loodgieterswerk komen zo van dezelfde vakman.",
+  },
+  {
+    q: "Hoe snel kan Kevin langskomen?",
+    a: "Bij lekkage of storing belt u 06-29528454 en hoort u direct wanneer hij er kan zijn, vaak dezelfde of de volgende werkdag. Voor grotere klussen komt hij eerst kijken en ontvangt u een vrijblijvende offerte met vaste prijs.",
+  },
+  {
+    q: "Wat kost een offerte?",
+    a: "Niets. U vraagt vrijblijvend een offerte aan via het formulier of telefonisch. Kevin komt kijken, bespreekt de mogelijkheden en u ontvangt een heldere prijs vooraf, zonder verrassingen achteraf.",
+  },
+];
 
 export default function Home() {
+  const jsonLd = [localBusiness, faqSchema(homeFaq)];
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Header />
       <main>
         <Hero />
@@ -57,21 +81,21 @@ export default function Home() {
         {/* Interne links voor SEO — populaire combinaties */}
         <section className="py-12 bg-gray-50">
           <div className="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-lg font-bold text-[#0f1f3d] mb-6">Veelgevraagde diensten in de regio</h2>
+            <h2 className="text-lg font-bold text-[#0f1f3d] mb-6">Loodgieter, dakdekker en cv-monteur per plaats</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
               {[
-                { href: "/dakwerk/kortenhoef", label: "Dakwerk Kortenhoef" },
-                { href: "/dakwerk/hilversum", label: "Dakwerk Hilversum" },
-                { href: "/sanitair/kortenhoef", label: "Sanitair Kortenhoef" },
                 { href: "/sanitair/hilversum", label: "Loodgieter Hilversum" },
-                { href: "/cv-installatie/kortenhoef", label: "CV-ketel Kortenhoef" },
-                { href: "/cv-installatie/hilversum", label: "CV-installatie Hilversum" },
-                { href: "/zinkwerk/kortenhoef", label: "Zinkwerk Kortenhoef" },
-                { href: "/gasinstallatie/kortenhoef", label: "Gasinstallatie Kortenhoef" },
-                { href: "/dakwerk/huizen", label: "Dakwerk Huizen" },
-                { href: "/sanitair/naarden", label: "Sanitair Naarden" },
-                { href: "/cv-installatie/bussum", label: "CV-ketel Bussum" },
-                { href: "/dakwerk/laren", label: "Dakwerk Laren" },
+                { href: "/dakwerk/hilversum", label: "Dakdekker Hilversum" },
+                { href: "/sanitair/huizen", label: "Loodgieter Huizen" },
+                { href: "/sanitair/bussum", label: "Loodgieter Bussum" },
+                { href: "/sanitair/baarn", label: "Loodgieter Baarn" },
+                { href: "/sanitair/weesp", label: "Loodgieter Weesp" },
+                { href: "/dakwerk/bussum", label: "Dakdekker Bussum" },
+                { href: "/dakwerk/huizen", label: "Dakdekker Huizen" },
+                { href: "/sanitair/naarden", label: "Loodgieter Naarden" },
+                { href: "/cv-installatie/hilversum", label: "CV-monteur Hilversum" },
+                { href: "/sanitair/kortenhoef", label: "Loodgieter Kortenhoef" },
+                { href: "/dakwerk/kortenhoef", label: "Dakdekker Kortenhoef" },
               ].map((link) => (
                 <Link
                   key={link.href}
@@ -89,6 +113,7 @@ export default function Home() {
         </section>
 
         <Testimonials />
+        <FAQ items={homeFaq} title="Veelgestelde vragen" />
         <CTA />
       </main>
       <Footer />

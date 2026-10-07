@@ -10,10 +10,10 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.smit-installatie-techniek.nl"),
-  title: "SMIT Installatie Techniek | Dakwerk, Zinkwerk, Sanitair & Installatie",
+  title: "Loodgieter & dakdekker 't Gooi | SMIT Installatie Techniek",
   description:
-    "Gecertificeerd installateur in Kortenhoef voor dakwerk, zinkwerk, sanitair, CV en gas. Betrouwbaar, snel en vakkundig. Bel 06-29528454.",
-  keywords: "installateur, dakwerk, zinkwerk, sanitair, CV-installatie, gas, Kortenhoef, Hilversum, Loosdrecht",
+    "SMIT Installatie Techniek uit Kortenhoef: loodgieter, dakdekker en cv-monteur in Hilversum, Wijdemeren en heel 't Gooi. Snel ter plaatse. Bel 06-29528454.",
+  keywords: "loodgieter, dakdekker, cv-monteur, installateur, zinkwerk, sanitair, gasinstallatie, Kortenhoef, Hilversum, Wijdemeren, 't Gooi",
   verification: {
     google: "z-dNvaC4bgMJbIrFHdioMbhvjkWl7xEjumcJ0KLBLhg",
   },
@@ -21,8 +21,8 @@ export const metadata: Metadata = {
     canonical: "https://www.smit-installatie-techniek.nl",
   },
   openGraph: {
-    title: "SMIT Installatie Techniek",
-    description: "Vakwerk in dak, zink, sanitair en installatie.",
+    title: "Loodgieter & dakdekker in 't Gooi | SMIT Installatie Techniek",
+    description: "Kevin Smit uit Kortenhoef: dakwerk, zinkwerk, sanitair, CV en gas in Hilversum, Wijdemeren en heel 't Gooi. Snel ter plaatse.",
     url: "https://www.smit-installatie-techniek.nl",
     siteName: "SMIT Installatie Techniek",
     locale: "nl_NL",

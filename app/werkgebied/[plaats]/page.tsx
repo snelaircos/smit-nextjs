@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FAQ from "@/components/FAQ";
 import { getLocation, locationSlugs } from "@/lib/data/locations";
-import { services } from "@/lib/data/services";
+import { services, vakmanLabel } from "@/lib/data/services";
 import { localBusiness, breadcrumbSchema, faqSchema } from "@/lib/structured-data";
 
 export async function generateStaticParams() {
@@ -17,8 +17,8 @@ export async function generateMetadata({ params }: { params: Promise<{ plaats: s
   const { plaats } = await params;
   const location = getLocation(plaats);
   if (!location) return {};
-  const title = `Installateur ${location.name} | SMIT Installatie Techniek`;
-  const description = `SMIT Installatie Techniek is uw installateur in ${location.name}. Dakwerk, zinkwerk, sanitair, CV en gasinstallatie. Snel ter plaatse, eerlijke prijzen.`;
+  const title = `Loodgieter & dakdekker ${location.name} | SMIT Installatie Techniek`;
+  const description = `Loodgieter, dakdekker of cv-monteur in ${location.name} nodig? Kevin Smit uit Kortenhoef is snel ter plaatse. Dakwerk, zinkwerk, sanitair, CV en gas. Bel 06-29528454.`;
   return {
     title,
     description,
@@ -58,15 +58,15 @@ export default async function PlaatsPage({ params }: { params: Promise<{ plaats:
           <div className="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8">
             <Breadcrumbs items={[{ label: "Werkgebied", href: "/werkgebied" }, { label: location.name }]} />
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-4 mb-5 leading-tight">
-              Installateur in {location.name}
+              Loodgieter, dakdekker en installateur in {location.name}
             </h1>
             <p className="text-gray-300 text-lg max-w-2xl leading-relaxed mb-8">
               {location.description} SMIT Installatie Techniek is uw betrouwbare vakman in {location.name} voor dakwerk, zinkwerk, sanitair, CV-installatie en gasinstallatie.
             </p>
             <div className="flex flex-wrap gap-4">
-              <a href="/offerte" className="inline-flex items-center gap-2 bg-[#1d6fe8] text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-600 transition-colors text-sm">
+              <Link href="/offerte" className="inline-flex items-center gap-2 bg-[#1d6fe8] text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-600 transition-colors text-sm">
                 Offerte aanvragen →
-              </a>
+              </Link>
               <a href="tel:0629528454" className="inline-flex items-center gap-2 bg-white/10 text-white font-semibold px-6 py-3 rounded-lg hover:bg-white/20 transition-colors text-sm border border-white/20">
                 Bel direct: 06-29528454
               </a>
@@ -94,7 +94,7 @@ export default async function PlaatsPage({ params }: { params: Promise<{ plaats:
                     {s.icon}
                   </div>
                   <h3 className="font-bold text-[#0f1f3d] mb-2 group-hover:text-[#1d6fe8] transition-colors">
-                    {s.name} in {location.name}
+                    {vakmanLabel(s.vakman)} in {location.name}
                   </h3>
                   <p className="text-gray-500 text-sm leading-relaxed line-clamp-2">{s.intro}</p>
                   <span className="mt-3 inline-flex items-center gap-1 text-[#1d6fe8] text-xs font-semibold">
@@ -136,7 +136,7 @@ export default async function PlaatsPage({ params }: { params: Promise<{ plaats:
           <div className="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-lg font-bold text-[#0f1f3d] mb-4">Ook actief in</h2>
             <div className="flex flex-wrap gap-2">
-              {[...services.map((s) => ({ href: `/${s.slug}/${plaats}`, label: `${s.name} ${location.name}` })),
+              {[...services.map((s) => ({ href: `/${s.slug}/${plaats}`, label: `${vakmanLabel(s.vakman)} ${location.name}` })),
                 { href: "/werkgebied", label: "← Alle werkgebieden" }].map((link) => (
                 <Link key={link.href} href={link.href} className="text-sm bg-gray-50 border border-gray-200 rounded-lg px-3 py-2 text-gray-600 hover:text-[#1d6fe8] hover:border-[#1d6fe8] transition-all">
                   {link.label}

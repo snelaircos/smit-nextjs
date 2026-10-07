@@ -4,6 +4,10 @@
  * Als er geen entry is, valt de pagina terug op de generieke template.
  */
 
+import { extraSanitairA } from "./combo-content-sanitair-a";
+import { extraSanitairB } from "./combo-content-sanitair-b";
+import { extraDakwerk } from "./combo-content-dakwerk";
+
 export type ComboContent = {
   metaTitle: string;
   metaDescription: string;
@@ -709,6 +713,16 @@ const content: Record<string, ComboContent> = {
   },
 };
 
+// Extra maatwerkcontent (per bestand gegroepeerd), samengevoegd met de basis hierboven.
+const allContent: Record<string, ComboContent> = {
+  ...content,
+  ...extraSanitairA,
+  ...extraSanitairB,
+  ...extraDakwerk,
+};
+
 export function getComboContent(dienst: string, plaats: string): ComboContent | undefined {
-  return content[`${dienst}/${plaats}`];
+  return allContent[`${dienst}/${plaats}`];
 }
+
+export const comboKeys = Object.keys(allContent);

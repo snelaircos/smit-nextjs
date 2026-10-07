@@ -7,6 +7,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FAQ from "@/components/FAQ";
 import OfferteForm from "@/components/OfferteForm";
 import { getService, servicesSlugs, services } from "@/lib/data/services";
+import { vakmanLabel } from "@/lib/data/services";
 import { locations } from "@/lib/data/locations";
 import { breadcrumbSchema, faqSchema, serviceSchema, localBusiness } from "@/lib/structured-data";
 
@@ -257,7 +258,7 @@ export default async function DienstPage({ params }: { params: Promise<{ dienst:
         <section className="py-14 bg-gray-50">
           <div className="max-w-[1120px] mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-2xl font-bold text-[#0f1f3d] mb-3">
-              {service.name} in de regio
+              {vakmanLabel(service.vakman)} in de regio
             </h2>
             <p className="text-gray-600 mb-7 text-sm">
               Wij zijn actief in Kortenhoef en de omliggende plaatsen in Het Gooi en omgeving. Selecteer uw woonplaats:
@@ -266,7 +267,7 @@ export default async function DienstPage({ params }: { params: Promise<{ dienst:
               {locations.map((loc) => (
                 <Link key={loc.slug} href={`/${dienst}/${loc.slug}`}
                   className="bg-white border border-gray-200 rounded-lg px-4 py-3 text-sm font-medium text-gray-700 hover:bg-[#1d6fe8] hover:text-white hover:border-[#1d6fe8] transition-all">
-                  {service.name} {loc.name}
+                  {vakmanLabel(service.vakman)} {loc.name}
                 </Link>
               ))}
             </div>

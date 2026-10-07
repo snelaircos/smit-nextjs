@@ -95,7 +95,7 @@ export default function KortenhoefPage() {
                     Een vakman uit Kortenhoef zelf
                   </h2>
                   <p className="text-gray-700 leading-relaxed text-lg border-l-4 border-[#1d6fe8] pl-5 mb-6">
-                    Kortenhoef heeft veel woningen gebouwd in de jaren '50 tot '80. Typische bouw met rijtjeshuizen, vrijstaande woningen en bungalows — elk met hun eigen installaties, dakconstructies en sanitairsituaties. Kevin Smit werkt al jaren in en rondom Kortenhoef en kent deze woningen door en door.
+                    Kortenhoef heeft veel woningen gebouwd in de jaren &apos;50 tot &apos;80. Typische bouw met rijtjeshuizen, vrijstaande woningen en bungalows — elk met hun eigen installaties, dakconstructies en sanitairsituaties. Kevin Smit werkt al jaren in en rondom Kortenhoef en kent deze woningen door en door.
                   </p>
                   <p className="text-gray-600 leading-relaxed">
                     Dat maakt een verschil. Een dakdekker die uw woningtype al tientallen keren heeft gezien, loopt niet tegen verrassingen aan. Een loodgieter die het lokale leidingwerk kent, diagnosticeert sneller en werkt efficiënter. SMIT Installatie Techniek combineert lokale kennis met gecertificeerd vakmanschap.

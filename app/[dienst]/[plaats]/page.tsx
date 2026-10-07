@@ -6,9 +6,12 @@ import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FAQ from "@/components/FAQ";
 import OfferteForm from "@/components/OfferteForm";
-import { getService, servicesSlugs, services } from "@/lib/data/services";
+import { getService, servicesSlugs, services, vakmanLabel } from "@/lib/data/services";
 import { getLocation, locationSlugs, locations } from "@/lib/data/locations";
 import { getComboContent } from "@/lib/data/combo-content";
+import { getNearby } from "@/lib/data/nearby";
+
+const cap = vakmanLabel;
 import { breadcrumbSchema, faqSchema, serviceSchema, localBusiness } from "@/lib/structured-data";
 
 export async function generateStaticParams() {
@@ -33,10 +36,12 @@ export async function generateMetadata({
 
   const combo = getComboContent(dienst, plaats);
 
-  const title = combo?.metaTitle ?? `${service.name} ${location.name} | SMIT Installatie Techniek`;
+  const vakman = cap(service.vakman);
+  // Zoekterm ("loodgieter huizen") altijd vooraan in titel en omschrijving
+  const title = combo?.metaTitle ?? `${vakman} ${location.name} | SMIT Installatie Techniek`;
   const description =
     combo?.metaDescription ??
-    `${service.vakman.charAt(0).toUpperCase() + service.vakman.slice(1)} in ${location.name}? SMIT Installatie Techniek levert vakkundig ${service.name.toLowerCase()} in ${location.name} en omgeving. Vrijblijvend offerte aanvragen.`;
+    `${vakman} in ${location.name} nodig? Kevin Smit uit Kortenhoef is snel ter plaatse voor ${service.name.toLowerCase()}. Vrijblijvende offerte vooraf. Bel 06-29528454.`;
 
   return {
     title,
@@ -57,6 +62,8 @@ export default async function DienstPlaatsPage({
   if (!service || !location) notFound();
 
   const combo = getComboContent(dienst, plaats);
+  const vakman = cap(service.vakman);
+  const nearby = getNearby(plaats);
 
   const faqItems = combo
     ? combo.faq
@@ -64,6 +71,10 @@ export default async function DienstPlaatsPage({
         {
           q: `Werkt SMIT Installatie Techniek ook in ${location.name}?`,
           a: `Ja, we zijn actief in ${location.name} en directe omgeving. Vanuit onze basis in Kortenhoef zijn we snel ter plaatse.`,
+        },
+        {
+          q: `Hoe snel kan een ${service.vakman} in ${location.name} langskomen?`,
+          a: `Kevin Smit rijdt vanuit Kortenhoef en is meestal dezelfde of de volgende werkdag in ${location.name}. Bij een lekkage of storing belt u 06-29528454, dan hoort u direct wanneer hij er kan zijn.`,
         },
         ...service.faq.slice(0, 3),
       ];
@@ -78,7 +89,8 @@ export default async function DienstPlaatsPage({
     serviceSchema(
       combo?.h1 ?? `${service.name} ${location.name}`,
       combo?.lead ?? `Professioneel ${service.name.toLowerCase()} in ${location.name} door SMIT Installatie Techniek.`,
-      `/${dienst}/${plaats}`
+      `/${dienst}/${plaats}`,
+      location.name
     ),
   ];
 
@@ -97,7 +109,7 @@ export default async function DienstPlaatsPage({
               ]}
             />
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-4 mb-5 leading-tight">
-              {combo?.h1 ?? `${service.name} in ${location.name}`}
+              {combo?.h1 ?? `${vakman} in ${location.name}`}
             </h1>
             <p className="text-gray-300 text-lg max-w-2xl leading-relaxed mb-4">
               {combo?.lead ?? `Op zoek naar een vakkundige ${service.vakman} in ${location.name}? SMIT Installatie Techniek levert professioneel ${service.name.toLowerCase()} in ${location.name} en de omliggende regio. ${location.extraContext ?? location.description}`}
@@ -137,7 +149,7 @@ export default async function DienstPlaatsPage({
                   ) : (
                     <>
                       <h2 className="text-xl sm:text-2xl font-bold text-[#0f1f3d] mb-3">
-                        {service.name} in {location.name} — vakkundig en betrouwbaar
+                        {vakman} in {location.name}: vakkundig en betrouwbaar
                       </h2>
                       <p className="text-gray-600 leading-relaxed">
                         {location.description} Bij SMIT Installatie Techniek kunt u rekenen op een ervaren {service.vakman} die het werk netjes uitvoert en u eerlijk adviseert. Geen gedoe, geen verborgen kosten — gewoon vakwerk.
@@ -156,7 +168,7 @@ export default async function DienstPlaatsPage({
                         </div>
                       )
                     ))
-                  : service.sections.slice(0, 2).map((s) => (
+                  : service.sections.slice(0, 4).map((s) => (
                       <div key={s.h2}>
                         <h2 className="text-lg sm:text-xl font-bold text-[#0f1f3d] mb-2">{s.h2}</h2>
                         <p className="text-gray-600 leading-relaxed text-sm">{s.body}</p>
@@ -185,7 +197,7 @@ export default async function DienstPlaatsPage({
                 {/* Werkzaamheden (always shown) */}
                 <div>
                   <h2 className="text-xl font-bold text-[#0f1f3d] mb-3">
-                    Werkzaamheden {service.name.toLowerCase()} in {location.name}
+                    Werkzaamheden van uw {service.vakman} in {location.name}
                   </h2>
                   <ul className="grid sm:grid-cols-2 gap-2">
                     {service.werkzaamheden.map((w) => (
@@ -198,6 +210,48 @@ export default async function DienstPlaatsPage({
                     ))}
                   </ul>
                 </div>
+
+                {/* Werkwijze + waarom SMIT (alleen zonder maatwerkcontent) */}
+                {!combo && (
+                  <div>
+                    <h2 className="text-xl font-bold text-[#0f1f3d] mb-3">
+                      Zo werkt het: een {service.vakman} inschakelen in {location.name}
+                    </h2>
+                    <ol className="space-y-3">
+                      {service.werkwijze.map((w, i) => (
+                        <li key={w.stap} className="flex gap-3 text-sm text-gray-700">
+                          <span className="w-7 h-7 rounded-full bg-[#1d6fe8] text-white flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">
+                            {i + 1}
+                          </span>
+                          <div>
+                            <p className="font-semibold text-[#0f1f3d]">{w.stap}</p>
+                            <p className="text-gray-600">{w.body}</p>
+                          </div>
+                        </li>
+                      ))}
+                    </ol>
+                  </div>
+                )}
+                {!combo && (
+                  <div>
+                    <h2 className="text-xl font-bold text-[#0f1f3d] mb-3">
+                      Waarom SMIT als {service.vakman} in {location.name}
+                    </h2>
+                    <p className="text-gray-600 leading-relaxed text-sm mb-4">
+                      {location.extraContext ?? location.description} Kevin Smit woont en werkt in Kortenhoef en rijdt zelf naar {location.name}: u spreekt met de vakman die het werk ook uitvoert, niet met een planner of callcenter.
+                    </p>
+                    <ul className="grid sm:grid-cols-2 gap-2">
+                      {service.trustReasons.map((r) => (
+                        <li key={r} className="flex items-start gap-2 text-sm text-gray-700">
+                          <svg className="w-4 h-4 text-green-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                          </svg>
+                          {r}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
 
                 {/* CTA block (combo only) */}
                 {combo && (
@@ -260,11 +314,10 @@ export default async function DienstPlaatsPage({
                 {/* Links naar andere plaatsen */}
                 <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
                   <h3 className="font-semibold text-[#0f1f3d] text-sm mb-3">
-                    {service.name} in andere plaatsen
+                    {vakman} in andere plaatsen
                   </h3>
                   <div className="flex flex-wrap gap-2">
-                    {locations
-                      .filter((l) => l.slug !== plaats)
+                    {[...nearby, ...locations.filter((l) => l.slug !== plaats && !nearby.some((n) => n.slug === l.slug))]
                       .slice(0, 8)
                       .map((loc) => (
                         <Link
@@ -272,7 +325,7 @@ export default async function DienstPlaatsPage({
                           href={`/${dienst}/${loc.slug}`}
                           className="text-xs bg-white border border-gray-200 rounded px-2.5 py-1.5 text-gray-600 hover:text-[#1d6fe8] hover:border-[#1d6fe8] transition-all"
                         >
-                          {loc.name}
+                          {vakman} {loc.name}
                         </Link>
                       ))}
                   </div>
@@ -285,7 +338,7 @@ export default async function DienstPlaatsPage({
         {/* FAQ */}
         <FAQ
           items={faqItems}
-          title={combo ? `Veelgestelde vragen over ${combo.h1.toLowerCase()}` : `Vragen over ${service.name.toLowerCase()} in ${location.name}`}
+          title={combo ? `Veelgestelde vragen over ${combo.h1.toLowerCase()}` : `Veelgestelde vragen over een ${service.vakman} in ${location.name}`}
         />
 
         {/* Andere diensten in deze plaats */}
@@ -303,7 +356,7 @@ export default async function DienstPlaatsPage({
                     href={`/${s.slug}/${plaats}`}
                     className="bg-gray-50 border border-gray-200 rounded-lg px-4 py-2.5 text-sm font-medium text-gray-700 hover:border-[#1d6fe8] hover:text-[#1d6fe8] transition-all"
                   >
-                    {s.name} {location.name}
+                    {cap(s.vakman)} {location.name}
                   </Link>
                 ))}
               <Link
@@ -313,6 +366,25 @@ export default async function DienstPlaatsPage({
                 Alle diensten in {location.name}
               </Link>
             </div>
+
+            {nearby.length > 0 && (
+              <div className="mt-10">
+                <h2 className="text-xl font-bold text-[#0f1f3d] mb-5">
+                  {vakman} in de buurt van {location.name}
+                </h2>
+                <div className="flex flex-wrap gap-3">
+                  {nearby.map((loc) => (
+                    <Link
+                      key={loc.slug}
+                      href={`/${dienst}/${loc.slug}`}
+                      className="bg-gray-50 border border-gray-200 rounded-lg px-4 py-2.5 text-sm font-medium text-gray-700 hover:border-[#1d6fe8] hover:text-[#1d6fe8] transition-all"
+                    >
+                      {vakman} {loc.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </section>
       </main>

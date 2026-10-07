@@ -81,9 +81,9 @@ export default function WerkgebiedPage() {
             <p className="text-gray-300 mb-8">
               Neem gerust contact op. We kijken altijd of we u kunnen helpen, ook buiten ons standaard werkgebied.
             </p>
-            <a href="/contact" className="inline-flex items-center gap-2 bg-[#1d6fe8] text-white font-semibold px-6 py-3.5 rounded-lg hover:bg-blue-600 transition-colors text-sm">
+            <Link href="/contact" className="inline-flex items-center gap-2 bg-[#1d6fe8] text-white font-semibold px-6 py-3.5 rounded-lg hover:bg-blue-600 transition-colors text-sm">
               Neem contact op →
-            </a>
+            </Link>
           </div>
         </section>
       </main>

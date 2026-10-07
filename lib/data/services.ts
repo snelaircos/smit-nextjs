@@ -29,7 +29,7 @@ export const services: Service[] = [
     namePlural: "Dakwerkzaamheden",
     vakman: "dakdekker",
     tagline: "Vakkundige dakdekker in Het Gooi en omgeving",
-    metaTitle: "Dakdekker Kortenhoef & omgeving | SMIT Installatie Techniek",
+    metaTitle: "Dakdekker Kortenhoef & 't Gooi | SMIT Installatie Techniek",
     metaDescription:
       "Dakwerk in Kortenhoef, Hilversum en Het Gooi. Dakreparatie, nieuwe dakbedekking en onderhoud door gecertificeerde dakdekker. Bel 06-29528454.",
     h1: "Dakdekker in Kortenhoef en omgeving",
@@ -150,7 +150,7 @@ export const services: Service[] = [
     namePlural: "Zinkwerkzaamheden",
     vakman: "zinkwerker",
     tagline: "Strak en duurzaam zinkwerk op maat",
-    metaTitle: "Zinkwerk Kortenhoef & omgeving | SMIT Installatie Techniek",
+    metaTitle: "Zinkwerk Kortenhoef & 't Gooi | SMIT Installatie Techniek",
     metaDescription:
       "Vakkundig zinkwerk in Kortenhoef en Het Gooi. Dakgoten, zinken dakranden, hemelwaterafvoer en maatwerk zinkwerk. Duurzaam, strak en op maat. Bel 06-29528454.",
     h1: "Zinkwerk in Kortenhoef en omgeving",
@@ -245,7 +245,7 @@ export const services: Service[] = [
     namePlural: "Sanitairwerkzaamheden",
     vakman: "loodgieter",
     tagline: "Loodgieterswerk en sanitairinstallatie in de regio",
-    metaTitle: "Loodgieter Kortenhoef & omgeving | SMIT Installatie Techniek",
+    metaTitle: "Loodgieter Kortenhoef & 't Gooi | SMIT Installatie Techniek",
     metaDescription:
       "Loodgieter in Kortenhoef, Hilversum en Het Gooi. Lekkage, badkamer, toilet, leidingwerk en sanitairinstallatie. Gecertificeerde loodgieter. Bel 06-29528454.",
     h1: "Loodgieter in Kortenhoef en omgeving",
@@ -346,7 +346,7 @@ export const services: Service[] = [
     namePlural: "CV-werkzaamheden",
     vakman: "cv-monteur",
     tagline: "CV-ketel installatie, reparatie en onderhoud in de regio",
-    metaTitle: "CV-monteur Kortenhoef & omgeving | SMIT Installatie Techniek",
+    metaTitle: "CV-monteur Kortenhoef & 't Gooi | SMIT Installatie Techniek",
     metaDescription:
       "CV-ketel installeren, vervangen of repareren in Kortenhoef en Het Gooi. Ook vloerverwarming en periodiek onderhoud. Gecertificeerde cv-monteur. Bel 06-29528454.",
     h1: "CV-installatie in Kortenhoef en omgeving",
@@ -447,7 +447,7 @@ export const services: Service[] = [
     namePlural: "Gasinstallatiewerkzaamheden",
     vakman: "gasinstallateur",
     tagline: "Veilige gasinstallatie door gecertificeerde vakman",
-    metaTitle: "Gasinstallatie Kortenhoef & omgeving | SMIT Installatie Techniek",
+    metaTitle: "Gasinstallatie Kortenhoef & 't Gooi | SMIT Installatie Techniek",
     metaDescription:
       "Gecertificeerde gasinstallateur in Kortenhoef en Het Gooi. Gasleidingen, gasaansluitingen en veiligheidscontroles. Veiligheid staat voorop. Bel 06-29528454.",
     h1: "Gasinstallatie in Kortenhoef en omgeving",
@@ -542,7 +542,7 @@ export const services: Service[] = [
     namePlural: "Installatiewerkzaamheden",
     vakman: "installateur",
     tagline: "Allround installateur voor woning en bedrijfspand",
-    metaTitle: "Installateur Kortenhoef & omgeving | SMIT Installatie Techniek",
+    metaTitle: "Installateur Kortenhoef & 't Gooi | SMIT Installatie Techniek",
     metaDescription:
       "Allround installateur in Kortenhoef en Het Gooi. Installatietechniek voor woning en bedrijfspand — van onderhoud tot renovatie. Bel 06-29528454.",
     h1: "Installateur in Kortenhoef en omgeving",
@@ -636,6 +636,12 @@ export const services: Service[] = [
     icon: "⚙️",
   },
 ];
+
+/** "loodgieter" → "Loodgieter", "cv-monteur" → "CV-monteur" (voor titels, H1's en linkteksten). */
+export function vakmanLabel(vakman: string): string {
+  if (vakman.startsWith("cv-")) return "CV-" + vakman.slice(3);
+  return vakman.charAt(0).toUpperCase() + vakman.slice(1);
+}
 
 export function getService(slug: string): Service | undefined {
   return services.find((s) => s.slug === slug);
