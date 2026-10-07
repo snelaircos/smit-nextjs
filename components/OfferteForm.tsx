@@ -6,6 +6,8 @@ type Props = { dienst?: string };
 
 export default function OfferteForm({ dienst }: Props) {
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [form, setForm] = useState({
     naam: "",
     telefoon: "",
@@ -13,16 +15,34 @@ export default function OfferteForm({ dienst }: Props) {
     postcode: "",
     dienst: dienst ?? "",
     omschrijving: "",
+    website: "", // honeypot — blijft leeg bij echte bezoekers
   });
 
   function handle(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
-  function submit(e: React.FormEvent) {
+  async function submit(e: React.FormEvent) {
     e.preventDefault();
-    // TODO: koppel aan e-mail service (Resend / Formspree / etc.)
-    setSubmitted(true);
+    setSending(true);
+    setError(null);
+    try {
+      const res = await fetch("/api/offerte", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      const data = (await res.json().catch(() => ({}))) as { ok?: boolean; error?: string };
+      if (!res.ok || !data.ok) {
+        setError(data.error ?? "Verzenden is niet gelukt.");
+        return;
+      }
+      setSubmitted(true);
+    } catch {
+      setError("Verzenden is niet gelukt.");
+    } finally {
+      setSending(false);
+    }
   }
 
   if (submitted) {
@@ -43,6 +63,15 @@ export default function OfferteForm({ dienst }: Props) {
 
   return (
     <form onSubmit={submit} className="space-y-4">
+      {/* Honeypot tegen spam — onzichtbaar voor bezoekers, bots vullen het wel in */}
+      <div className="absolute -left-[9999px] top-0 h-0 w-0 overflow-hidden" aria-hidden="true">
+        <label htmlFor="website">Website</label>
+        <input
+          id="website" name="website" type="text" tabIndex={-1} autoComplete="off"
+          value={form.website} onChange={handle}
+        />
+      </div>
+
       <div className="grid sm:grid-cols-2 gap-4">
         <div>
           <label htmlFor="naam" className="block text-sm font-medium text-gray-700 mb-1">
@@ -126,11 +155,26 @@ export default function OfferteForm({ dienst }: Props) {
         />
       </div>
 
+      {error && (
+        <div role="alert" className="bg-red-50 border border-red-200 rounded-lg p-4 text-sm text-red-700">
+          <p className="font-semibold mb-1">{error}</p>
+          <p>
+            Bel ons op{" "}
+            <a href="tel:0629528454" className="font-semibold underline">06 - 29528454</a>
+            {" "}of mail naar{" "}
+            <a href="mailto:k.smitinstallatietechniek@outlook.com" className="font-semibold underline break-all">
+              k.smitinstallatietechniek@outlook.com
+            </a>.
+          </p>
+        </div>
+      )}
+
       <button
         type="submit"
-        className="w-full bg-[#1d6fe8] text-white font-semibold py-3.5 rounded-lg hover:bg-blue-600 transition-colors text-sm"
+        disabled={sending}
+        className="w-full bg-[#1d6fe8] text-white font-semibold py-3.5 rounded-lg hover:bg-blue-600 transition-colors text-sm disabled:opacity-60 disabled:cursor-not-allowed"
       >
-        Offerte aanvragen →
+        {sending ? "Versturen..." : "Offerte aanvragen →"}
       </button>
       <p className="text-xs text-gray-400 text-center">
         Vrijblijvend · Geen verplichtingen · Reactie binnen 1 werkdag
