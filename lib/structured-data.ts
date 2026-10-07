@@ -16,7 +16,7 @@ export const kevin = {
   image: `${BASE_URL}/kevin-profiel.png`,
   worksFor: { "@id": `${BASE_URL}/#business` },
   homeLocation: { "@type": "Place", name: "Kortenhoef" },
-  knowsAbout: ["Dakwerk", "Zinkwerk", "Loodgieterswerk", "Sanitair", "CV-installatie", "Gasinstallatie", "Vloerverwarming"],
+  knowsAbout: ["Dakwerk", "Zinkwerk", "Loodgieterswerk", "Sanitair", "Centrale verwarming", "Cv-ketels", "Gasinstallatie", "Vloerverwarming"],
 };
 
 export const localBusiness = {
@@ -31,7 +31,7 @@ export const localBusiness = {
   image: `${BASE_URL}/smit-bus.jpg`,
   logo: `${BASE_URL}/logo.svg`,
   description:
-    "SMIT Installatie Techniek is het installatiebedrijf van Kevin Smit in Kortenhoef: loodgieter, dakdekker, zinkwerker en cv-monteur voor woningen en bedrijven in Hilversum, Wijdemeren en heel 't Gooi. Dakwerk, zinkwerk, sanitair, CV-installatie en gasinstallatie.",
+    "SMIT Installatie Techniek is het installatiebedrijf van Kevin Smit in Kortenhoef: loodgieter, dakdekker, zinkwerker en cv-monteur voor woningen en bedrijven in Hilversum, Wijdemeren en heel 't Gooi. Dakwerk, zinkwerk, sanitair, centrale verwarming (cv-ketels) en gasinstallatie.",
   priceRange: "€€",
   address: {
     "@type": "PostalAddress",
@@ -47,7 +47,7 @@ export const localBusiness = {
   areaServed: locations.map((l) => ({ "@type": "City", name: l.name })),
   founder: kevin,
   hasMap: GOOGLE_MAPS_URL,
-  knowsAbout: ["Dakwerk", "Zinkwerk", "Loodgieterswerk", "Sanitair", "CV-installatie", "Gasinstallatie", "Vloerverwarming", "Dakgoten"],
+  knowsAbout: ["Dakwerk", "Zinkwerk", "Loodgieterswerk", "Sanitair", "Centrale verwarming", "Cv-ketels", "Gasinstallatie", "Vloerverwarming", "Dakgoten"],
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",

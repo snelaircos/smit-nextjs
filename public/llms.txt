@@ -17,7 +17,7 @@
 - Dakwerk (dakdekker): platte daken, pannendaken, daklekkage, dakreparatie, lichtkoepels, dakinspectie — https://www.smit-installatie-techniek.nl/dakwerk
 - Zinkwerk: dakgoten, zinken daklijsten, hemelwaterafvoer — https://www.smit-installatie-techniek.nl/zinkwerk
 - Sanitair / loodgieter: lekkages, verstoppingen, leidingwerk, badkamer, toilet, keuken, kranen, warm water — https://www.smit-installatie-techniek.nl/sanitair
-- CV-installatie (cv-monteur): cv-ketel installeren, vervangen, onderhoud, storingen, vloerverwarming — https://www.smit-installatie-techniek.nl/cv-installatie
+- CV-installatie (centrale verwarming, cv-monteur): cv-ketel installeren, vervangen, onderhoud, storingen, vloerverwarming — https://www.smit-installatie-techniek.nl/cv-installatie
 - Gasinstallatie (gasinstallateur): gasleidingen, gasaansluitingen, veiligheidscontroles — https://www.smit-installatie-techniek.nl/gasinstallatie
 - Installatietechniek (allround installateur) — https://www.smit-installatie-techniek.nl/installatietechniek
 
