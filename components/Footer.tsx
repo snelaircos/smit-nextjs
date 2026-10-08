@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { GOOGLE_MAPS_URL, GOOGLE_REVIEW_URL } from "@/lib/structured-data";
 
@@ -26,13 +25,14 @@ export default function Footer() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Image
-              src="/logo.svg"
-              alt="SMIT Installatie Techniek"
-              width={110}
-              height={40}
-              className="mb-4 brightness-200 invert"
-            />
+            <Link href="/over-ons" className="inline-block mb-4 group">
+              <span className="block text-2xl font-bold text-white group-hover:text-blue-200 transition-colors">
+                Kevin Smit
+              </span>
+              <span className="block text-xs font-semibold uppercase tracking-widest text-[#1d6fe8]">
+                SMIT Installatie Techniek
+              </span>
+            </Link>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
               Loodgieter, dakdekker en cv-monteur in &apos;t Gooi. Kevin Smit uit
               Kortenhoef voor dakwerk, zinkwerk, sanitair, CV en gas. Vakmanschap waar u
